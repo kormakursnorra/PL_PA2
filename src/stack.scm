@@ -1,7 +1,6 @@
-(declare (unit project2))
+(declare (unit stack))
 (import (chicken sort))
 
-#lang racket
 
 (define (make-stack stack)
   (lambda (command . args)

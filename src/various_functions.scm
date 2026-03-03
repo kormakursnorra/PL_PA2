@@ -1,18 +1,12 @@
-(declare (unit project2))
+(declare (unit varios_functions))
 (import (chicken sort))
-#lang racket
 
-; 1. Various Functions
-
-; a. countdown
 (define (countdown n)
   (if (= n 0)
       '()
       (cons n (countdown (- n 1)))))
 
 
-
-; b. remove-every-second
 (define (remove-every-second lis)
   (cond
     ((null? lis) '()) ; base case empty list
@@ -21,7 +15,6 @@
                 (remove-every-second (cddr lis))))))
 
 
-; c. insert-at
 (define (insert-at lis i elem)
   (cond 
     [(null? lis) (cons elem '())]
@@ -34,7 +27,6 @@
 )
 
 
-; d. sequence
 (define (seq_helper n i)
   (cond
     [(equal? n i) (cons i '())]
@@ -49,7 +41,7 @@
   ) 
 )
 
-; e. combine
+
 (define (combine fun init lis)
   (cond
     [(null? lis) init]
@@ -58,7 +50,6 @@
 )
 
 
-; g. split
 (define (split_helper fun lis lis1 lis2)
   (cond
     [(null? lis) (list lis1 lis2)]

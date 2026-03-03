@@ -1,10 +1,6 @@
-(declare (unit project2))
+(declare (unit selection_sort))
 (import (chicken sort))
-#lang racket
 
-; 3. Selection sort
-
-; a. delete-elem 
 (define (delete-elem elem lis)
     (cond 
         [(null? lis) '()]
@@ -15,7 +11,6 @@
 )
 
 
-; b. select-min 
 (define (select-min lis)
     (if (null? lis) '()
     (if (null? (cdr lis)) 
@@ -29,7 +24,7 @@
 )
 
 
-; c. selection-sort
+
 (define (selection-sort lis) 
     (if (null? lis) 
         '()
