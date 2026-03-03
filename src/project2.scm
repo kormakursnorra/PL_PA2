@@ -25,7 +25,7 @@
   (cond 
     [(null? lis) (cons elem '())]
     [(> i (+ (length lis) 1)) lis]
-    [(equal? i 1) (cons elem lis)]
+    [(eq? i 1) (cons elem lis)]
     [else(cons (car lis) 
       (insert-at (cdr lis) (- i 1) elem))
     ]
@@ -36,13 +36,13 @@
 ; d. sequence
 (define (seq_helper n i)
   (cond
-    [(equal? n i) (cons i '())]
+    [(eq? n i) (cons i '())]
     [else (cons i (seq_helper n (+ i 1)))]
   )
 ) 
 
 (define (sequence n)
-  (if (equal? n 0) 
+  (if (eq? n 0) 
     '()
     (seq_helper n 1)
   ) 
@@ -100,7 +100,7 @@
 (define (delete-elem elem lis)
     (cond 
         [(null? lis) '()]
-        [(equal? elem (car lis)) (cdr lis)]
+        [(eq? elem (car lis)) (cdr lis)]
         [else (cons (car lis) 
             (delete-elem elem (cdr lis)))]
     )
