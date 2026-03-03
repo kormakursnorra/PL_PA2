@@ -1,16 +1,7 @@
 #lang racket
 ; 3. Selection sort
 ; 
-; a. Write the function delete-elem which accepts two arguments: the
-; element elem and the list lis. The function returns a new list, in which
-; the first occurrence of elem has been removed from lis
-; 
-; Test Cases:
-; (delete-elem 1 '(1 2 3 4))
-; '(2 3 4)
-; (delete-elem 3 '(1 2 3 4 3))
-; '(1 2 4 3)
-
+; a. delete-elem 
 
 (define (delete-elem elem lis)
     (cond 
@@ -24,14 +15,7 @@
 (delete-elem 1 '(1 2 3 4))
 (delete-elem 3 '(1 2 3 4 3))
 
-; b. Write the function select-min which returns the smallest element from
-; the parameter list lis. Hint: Use a let statement to find the smallest
-; element in the tail and compare it to the head.
-; 
-; Test Cases:
-; (select-min '(4 2 1 5 7))
-; 1
-
+; b. select-min 
 
 (define (select-min lis)
     (if (null? lis) '()
@@ -47,14 +31,7 @@
 
 (select-min '(4 2 1 5 7))
 
-; c. Write the function selection-sort which accepts a list lis as an
-; argument and returns a new list, a sorted version of lis (in ascending
-; order). The function must use both delete-item from a) and select-
-; min from b).
-; 
-; Test Cases:
-; (selection-sort '(3 5 2 1 2 5 4 6))
-; (1 2 2 3 4 5 5 6)
+; c. selection-sort
 
 (define (selection-sort lis) 
     (if (null? lis) 
