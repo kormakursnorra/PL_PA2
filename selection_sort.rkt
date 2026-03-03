@@ -14,12 +14,15 @@
 
 (define (delete-elem elem lis)
     (cond 
-        [(null? lis) empty]
+        [(null? lis) '()]
         [(equal? elem (car lis)) (cdr lis)]
         [else (cons (car lis) 
             (delete-elem elem (cdr lis)))]
     )
 )
+
+(delete-elem 1 '(1 2 3 4))
+(delete-elem 3 '(1 2 3 4 3))
 
 ; b. Write the function select-min which returns the smallest element from
 ; the parameter list lis. Hint: Use a let statement to find the smallest
@@ -31,7 +34,7 @@
 
 
 (define (select-min lis)
-    (if (null? lis) empty
+    (if (null? lis) '()
     (if (null? (cdr lis)) 
         (car lis)
         (let ([min (select-min (cdr lis))])
@@ -41,6 +44,8 @@
         ))
     ))
 )
+
+(select-min '(4 2 1 5 7))
 
 ; c. Write the function selection-sort which accepts a list lis as an
 ; argument and returns a new list, a sorted version of lis (in ascending
@@ -53,9 +58,11 @@
 
 (define (selection-sort lis) 
     (if (null? lis) 
-        empty
+        '()
         (cons (select-min lis) 
             (selection-sort (delete-elem (select-min lis) lis))
         )
     ) 
 )
+
+(selection-sort '(3 5 2 1 2 5 4 6))
