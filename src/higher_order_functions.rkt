@@ -1,6 +1,3 @@
-(declare (unit project2))
-(import (chicken sort))
-
 #lang racket
 ; 2. Higher-order functions 
  

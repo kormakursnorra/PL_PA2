@@ -1,5 +1,3 @@
-(declare (unit project2))
-(import (chicken sort))
 #lang racket
 
 ; 1. Various Functions
