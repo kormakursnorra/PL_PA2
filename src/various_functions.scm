@@ -1,4 +1,4 @@
-(declare (unit varios_functions))
+(declare (unit various_functions))
 (import (chicken sort))
 
 (define (countdown n)
