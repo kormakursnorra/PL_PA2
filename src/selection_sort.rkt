@@ -1,8 +1,8 @@
 #lang racket
 ; 3. Selection sort
-; 
-; a. delete-elem 
 
+
+; a. delete-elem 
 (define (delete-elem elem lis)
     (cond 
         [(null? lis) '()]
@@ -12,11 +12,8 @@
     )
 )
 
-(delete-elem 1 '(1 2 3 4))
-(delete-elem 3 '(1 2 3 4 3))
 
 ; b. select-min 
-
 (define (select-min lis)
     (if (null? lis) '()
     (if (null? (cdr lis)) 
@@ -29,10 +26,8 @@
     ))
 )
 
-(select-min '(4 2 1 5 7))
 
 ; c. selection-sort
-
 (define (selection-sort lis) 
     (if (null? lis) 
         '()
@@ -41,5 +36,3 @@
         )
     ) 
 )
-
-(selection-sort '(3 5 2 1 2 5 4 6))
